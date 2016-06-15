@@ -19,9 +19,9 @@ class Contato(models.Model):
 	}
 
 	contato_id = models.AutoField(primary_key=True)
-	contato_nome = models.CharField(max_lenght=50)
+	contato_nome = models.CharField(max_length=50)
 	contato_nascimento = models.DateField()
-	contato_sexo = models.CharField(choices = SEXO_CHOICES)
-	contato_estado_civil = models. CharField(choices = ESTADO_CIVIL_CHOICES, verbose_name='Estado Civil')
-	contato_email = models.CharField(max_lenght=50)
-	contato_favorito = models.booleanFields(verbose_name='Favorito')
+	contato_sexo = models.CharField(max_length=50, choices=SEXO_CHOICES)
+	contato_estado_civil = models. CharField(max_length=50, choices=ESTADO_CIVIL_CHOICES, verbose_name='Estado Civil')
+	contato_email = models.CharField(max_length=50)
+	contato_favorito = models.BooleanField(verbose_name='Favorito')
