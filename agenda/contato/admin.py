@@ -1,5 +1,5 @@
 from django.contrib import admin
-from agenda.contato.models import Contato
+from agenda.contato.models import Contato, Tarefa, Conta
 
 class ContatoAdmin(admin.ModelAdmin):
 	model = Contato
@@ -8,3 +8,18 @@ class ContatoAdmin(admin.ModelAdmin):
 	search_fields = ['contato_nome']
 	save_on_top = True
 admin.site.register(Contato, ContatoAdmin)
+
+class TarefaAdmin(admin.ModelAdmin):
+	model = Tarefa
+	list_display = ['tarefa_nome', 'tarefa_data_inicio', 'concluido']
+	search_fields = ['tarefa_nome']
+	save_on_top = True
+admin.site.register(Tarefa, TarefaAdmin)
+
+class ContaAdmin(admin.ModelAdmin):
+	model = Conta
+	list_display = ['conta_nome', 'conta_data_vencimento', 'pago']
+	search_fields = ['conta_nome']
+	list_filter = ['pago']
+	save_on_top = False
+admin.site.register(Conta, ContaAdmin)
